@@ -1,5 +1,5 @@
 class Vendor 
-  attr_reader :name, :inventory, :stock
+  attr_reader :name, :inventory, :stock, :potential_revenue
   def initialize(name)
     @name = name
     @inventory = Hash.new(0)
@@ -15,5 +15,10 @@ class Vendor
     if @inventory[item] += count 
     end
 
+  end
+
+  def potential_revenue
+    #sum of item prices * quantity
+    @inventory.map {|item, count| item.price * count}.sum
   end
 end

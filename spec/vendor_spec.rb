@@ -4,7 +4,7 @@ require './lib/item'
 
 RSpec.describe Vendor do 
 
-  it 'exists' do 
+  it 'exists, defaults to no inventory, and can check stock' do 
     item1 = Item.new({name: 'Peach', price: "$0.75"})
     item2 = Item.new({name: 'Tomato', price: '$0.50'})
     vendor = Vendor.new("Rocky Mountain Fresh")
@@ -16,7 +16,7 @@ RSpec.describe Vendor do
 
   end
 
-  it 'can add stock to an item' do 
+  it 'can add stock to an item and check inventory' do 
     item1 = Item.new({name: 'Peach', price: "$0.75"})
     item2 = Item.new({name: 'Tomato', price: '$0.50'})
     vendor = Vendor.new("Rocky Mountain Fresh")
